@@ -2,6 +2,12 @@ source 'https://rubygems.org'
 
 gem 'rails', '~> 3.2.13'
 
+gem 'bootstrap-sass'
+gem 'bcrypt-ruby'
+gem 'faker'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
+
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
@@ -13,6 +19,7 @@ end
 
 group :test do
 	gem 'capybara', '~> 2.1.0'
+	gem "factory_girl_rails", "~> 4.2.1"
 end
 
 # Gems used only for assets and not required
