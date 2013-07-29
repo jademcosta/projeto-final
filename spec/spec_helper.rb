@@ -36,5 +36,5 @@ RSpec.configure do |config|
   #     --seed 1234
   config.order = "random"
 
-  # config.include Capybara::DSL # no projeto de apredizado, o capybara não funcionava se não tivesse isso aqui...
+  config.include Capybara::DSL # Esta linha faz com que seja possivel usarmos os metodos 'visit' e 'page' nos nossos testes
 end
