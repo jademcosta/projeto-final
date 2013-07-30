@@ -1,4 +1,21 @@
 <% provide(:title, 'Cadastro') %>
 
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+
+<%= form_for(@user) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name, "Nome" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password, "Senha" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "Confirme a senha" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Criar conta" %>
+<% end %>
