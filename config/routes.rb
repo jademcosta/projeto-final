@@ -1,9 +1,11 @@
 ProjetoFinal::Application.routes.draw do
     
     resources :users
+   
     match '/signup', to: 'users#new'
-    
+    match '/signin', to: 'sessions#new'
     resources :sessions, only: [:new, :create, :destroy]
+    match '/signout', to: 'sessions#destroy', via: :delete
 
     root to: 'static_pages#home'
     

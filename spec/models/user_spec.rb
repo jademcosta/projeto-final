@@ -6,6 +6,10 @@ require 'spec_helper'
 #Soh voltar a mexer aqui quando tivermos seguidores
 #===================================================
 
+
+
+
+
 describe User do
 
     before do
