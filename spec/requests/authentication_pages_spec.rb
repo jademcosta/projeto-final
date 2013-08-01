@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe "Authentication" do
@@ -8,7 +10,7 @@ describe "Authentication" do
         before { visit signin_path }
 
         it { should have_selector('h1', text: 'Entrar') }
-        #		it { should have_selector('title', text: 'Sign in') }
+        it { should have_title(full_title('Entrar')) }
     end
 
 
@@ -39,7 +41,8 @@ describe "Authentication" do
             #			end
 
             #			it { should have_selector('title', text: user.name) }
-            #it { should have_link('Profile', href: user_path(user)) }
+            it { should have_link('Perfil', href: user_path(user)) }
+            it { should have_link('Usuários', href: users_path) }
             #it { should have_link('Settings', href: edit_user_path(user)) }
             it { should have_link('Sair', href: signout_path) }
             it { should_not have_link('Entrar', href: signin_path) }
