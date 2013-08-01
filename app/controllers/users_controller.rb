@@ -8,7 +8,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			sign_in @user
-			flash[:success] = "Bem vindo à rede de pesquisadores!"
+			flash[:success] = "Bem vindo a rede de pesquisadores!"
 			redirect_to root_path
 		else
 			render 'new'

@@ -1,5 +1,11 @@
 require 'spec_helper'
 
+
+
+#===================================================
+#Soh voltar a mexer aqui quando tivermos seguidores
+#===================================================
+
 describe User do
 
     before do
@@ -18,8 +24,23 @@ describe User do
     it { should respond_to(:password) }
     it { should respond_to(:password_confirmation) }
     it { should respond_to(:authenticate) }
+    it { should respond_to(:remember_token) }
 
     it { should be_valid }
+
+    describe "accessible attributes" do
+        it "should not allow access to user id" do
+            expect do
+                User.new(admin: true)
+            end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+        end
+    end
+
+    describe "remember token" do
+        before { @user.save }
+        its(:remember_token) { should_not be_blank }
+    end
+
 
     describe "when name is not present" do
         before { @user.name = '' }

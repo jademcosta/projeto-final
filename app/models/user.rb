@@ -11,5 +11,13 @@ class User < ActiveRecord::Base
     validates :password_confirmation, presence: true
 
     before_save { |user| user.email = email.downcase }
+    before_save { generate_token(:remember_token) }
 
+    private
+
+        def generate_token(column)
+            begin
+                self[column] = SecureRandom.urlsafe_base64
+            end while User.exists?(column => self[column])
+        end
 end

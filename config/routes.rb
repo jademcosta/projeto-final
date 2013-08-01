@@ -3,6 +3,8 @@ ProjetoFinal::Application.routes.draw do
     resources :users
     match '/signup', to: 'users#new'
     
+    resources :sessions, only: [:new, :create, :destroy]
+
     root to: 'static_pages#home'
     
 	match '/contact', to: 'static_pages#contact'
