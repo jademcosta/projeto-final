@@ -1,7 +1,13 @@
 ProjetoFinal::Application.routes.draw do
     
-    resources :users
-   
+    resources :relationships, only: [:create, :destroy] 
+
+    resources :users do
+		member do
+			get :following, :followers
+		end
+	end
+
     match '/signup', to: 'users#new'
     match '/signin', to: 'sessions#new'
     resources :sessions, only: [:new, :create, :destroy]

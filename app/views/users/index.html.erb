@@ -1,0 +1,14 @@
+<% provide(:title, 'All users') %>
+
+<h1>All users</h1>
+
+<%= will_paginate %>
+
+<ul class="users">
+	<% # a linha abaixo eh o mesmo que: @users.each do |user| %>
+	<% # O rails jah sabe que ao chamar a linha abaixo, por ela ser um array,  %>
+	<% # ele tem que procurar pela partial chamada _user %>
+	<%= render @users %>
+</ul>
+
+<%= will_paginate %>
