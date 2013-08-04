@@ -5,6 +5,10 @@ require 'spec_helper'
 describe "Authentication" do
 
     subject { page }
+    
+    describe "validações de permissoes" do
+        pending "escrever validações de permissão"
+    end
 
     describe "signin page" do
         before { visit signin_path }
@@ -36,14 +40,14 @@ describe "Authentication" do
 
             #			before do
             #				fill_in "Email", with: user.email
-            #				fill_in "Password", with: user.password
-            #				click_button "Sign in"
+            #				fill_in "Senha", with: user.password
+            #				click_button "Entrar"
             #			end
 
             #			it { should have_selector('title', text: user.name) }
             it { should have_link('Perfil', href: user_path(user)) }
             it { should have_link('Usuários', href: users_path) }
-            #it { should have_link('Settings', href: edit_user_path(user)) }
+            #it { should have_link('Configurações', href: edit_user_path(user)) }
             it { should have_link('Sair', href: signout_path) }
             it { should_not have_link('Entrar', href: signin_path) }
 

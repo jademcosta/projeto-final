@@ -4,9 +4,7 @@ class ApplicationController < ActionController::Base
   # helper_method :nome_do_metodo
   # para que o mteodo fique disponivel no application helper ;)
     
-    helper_method :signed_in?
-    helper_method :current_user
-    helper_method :current_user?
+    helper_method :signed_in?, :current_user, :current_user?
 
     def sign_in(user)
 		cookies.permanent[:remember_token] = user.remember_token
