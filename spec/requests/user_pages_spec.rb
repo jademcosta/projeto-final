@@ -127,7 +127,9 @@ describe "UserPages" do
 			sign_in user
 			visit edit_user_path(user)
 		end
-		
+        
+        pending "Fazer com que as validações no método criar e editar sejam diferentemente avalidadas"
+
 		describe "page" do
 			it { should have_selector('h1', text: 'Editar perfil') }
             it { should have_title(full_title('Editar perfil')) }

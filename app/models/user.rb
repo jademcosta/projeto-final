@@ -10,11 +10,13 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower #nesse caso poderiamos tirar o source:
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+    VALID_HOMEPAGE_REGEX = /(http(s)?:\/\/)?([wW]{3}\.)+[a-zA-Z0-9_]/i
 
     validates :name, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
-    validates :password, presence: true
-    validates :password_confirmation, presence: true
+    validates :password, presence: true, on: :create
+    validates :password_confirmation, presence: true, on: :create
+    
 
     before_save { |user| user.email = email.downcase }
     before_save { generate_token(:remember_token) }
