@@ -1,6 +1,23 @@
 <% if signed_in? %>
 
 
+<aside>
+    <section>
+    <h1>
+        <%= link_to current_user.name, edit_user_path(current_user) %>
+    </h1> 
+    </section>
+
+    <section>
+        <%= render 'shared/user_info' %>
+        <% if current_user?(current_user) %>
+        <% end %>
+    </section>
+
+    <section>
+        <%= render 'shared/stats' %>
+    </section>
+</aside>
 
 
 <% else %>

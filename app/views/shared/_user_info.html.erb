@@ -1,0 +1,16 @@
+
+<% unless current_user.job_title.blank? %>
+    <div>Cargo: <%= current_user.job_title %></div>
+<% end %>
+
+<% unless current_user.title.blank? %>
+    <div>Título: <%= current_user.title %></div>
+<% end %>
+
+<% unless current_user.institution.blank? %>
+    <div>Instituição: <%= current_user.institution %></div>
+<% end %>
+
+<% unless current_user.homepage.blank? %>
+    <div>Homepage: <%= current_user.homepage %></div>
+<% end %>
