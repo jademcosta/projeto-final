@@ -131,7 +131,6 @@ describe "UserPages" do
 		describe "page" do
 			it { should have_selector('h1', text: 'Editar perfil') }
             it { should have_title(full_title('Editar perfil')) }
-			#it { should have_link('change', href: 'http://gravatar.com/emails') }
 		end
 
 		describe "with invalid information" do

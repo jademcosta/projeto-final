@@ -1,0 +1,22 @@
+<% provide(:title, "Editar perfil") %>
+
+<h1>Editar perfil</h1>
+
+<%= form_for(@user) do |f| %>
+    
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :name, "Nome" %>
+    <%= f.text_field :name %>
+
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+
+    <%= f.label :password, "Senha" %>
+    <%= f.password_field :password %>
+
+    <%= f.label :password_confirmation, "Confirme a senha" %>
+    <%= f.password_field :password_confirmation %>
+
+    <%= f.submit "Salvar alterações", class: "btn btn-large btn-primary" %>
+<% end %>

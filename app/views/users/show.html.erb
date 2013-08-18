@@ -2,9 +2,12 @@
 
 <aside>
     <section>
-        <h1>
-            <%= @user.name %>
-        </h1>
+        <h1><%= @user.name %></h1>
+        <% if current_user?(@user) %>
+            <div>
+                <%= link_to "Editar", edit_user_path(@user) %> 
+            </div>
+        <% end %>
     </section>
     <section>
         <%= render 'shared/stats' %>
