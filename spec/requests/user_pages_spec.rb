@@ -136,7 +136,10 @@ describe "UserPages" do
 		end
 
 		describe "with invalid information" do
-			before { click_button "Salvar alterações" }
+			before do
+                fill_in "Nome", with: ""
+                click_button "Salvar alterações"
+            end
 			it { should have_content('error') }
 		end
 
@@ -149,6 +152,9 @@ describe "UserPages" do
 				fill_in "Email", with: new_email
 				fill_in "Senha", with: user.password
 				fill_in "Confirme a senha", with: user.password
+                fill_in "Instituição", with: "UFRJ"
+                fill_in "Cargo", with: "Professor"
+                fill_in "Título", with: "Mestre"
 				click_button "Salvar alterações"
 			end
 		
