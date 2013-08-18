@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
 	has_many :followers, through: :reverse_relationships, source: :follower #nesse caso poderiamos tirar o source:
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-    VALID_HOMEPAGE_REGEX = /(http(s)?:\/\/)?([wW]{3}\.)+[a-zA-Z0-9_]/i
 
     validates :name, presence: true
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
@@ -33,7 +32,6 @@ class User < ActiveRecord::Base
 	def unfollow!(other_user)
 		relationships.find_by_followed_id(other_user.id).destroy
 	end
-
 
     private
 
