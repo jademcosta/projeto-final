@@ -33,6 +33,10 @@ class User < ActiveRecord::Base
 		relationships.find_by_followed_id(other_user.id).destroy
 	end
 
+    def self.search(search, page)
+        paginate :page => page, :conditions => ['name like ?', "%#{search}%"], :order => 'name'
+    end
+
     private
 
         def generate_token(column)

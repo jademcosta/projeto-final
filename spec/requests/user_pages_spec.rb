@@ -146,7 +146,7 @@ describe "UserPages" do
 		describe "with valid information" do
 			let(:new_name) { "Novo nome" }
 			let(:new_email) { "novo@example.com" }
-		
+	        
 			before do
 				fill_in "Nome", with: new_name
 				fill_in "Email", with: new_email
@@ -165,6 +165,23 @@ describe "UserPages" do
 			specify { user.reload.email.should == new_email }
 		end
 	end
+
+    describe "search" do 
+        let(:user) { FactoryGirl.create(:user) }
+		before do 
+			sign_in user
+			visit users_path
+		end
+        
+        #describe "without providing string to query" do
+            #before { click_button "Filtrar" }
+
+            #it { should have_content('4') }
+        #end
+
+       pending "Escrever teste para busca de usuários" 
+
+    end
 
     describe "following/followers" do
 		let(:user) { FactoryGirl.create(:user) }
