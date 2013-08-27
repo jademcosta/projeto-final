@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130802022721) do
+ActiveRecord::Schema.define(:version => 20130819023035) do
+
+  create_table "inputs", :force => true do |t|
+    t.text     "text"
+    t.string   "type"
+    t.date     "date"
+    t.string   "institution"
+    t.string   "degree_type"
+    t.string   "status"
+    t.integer  "user_id"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
