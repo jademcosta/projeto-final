@@ -14,7 +14,7 @@ describe Input do
     it { should respond_to(:type) }
     it { should respond_to(:date) }
     it { should respond_to(:institution) }
-    it { should respond_to(:degree_type) }
+    it { should respond_to(:subtype) }
     it { should respond_to(:status) }
     it { should respond_to(:user_id) }
 

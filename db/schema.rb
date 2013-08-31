@@ -11,14 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831201829) do
+ActiveRecord::Schema.define(:version => 20130831212622) do
 
   create_table "inputs", :force => true do |t|
     t.text     "text"
     t.string   "type"
     t.date     "date"
     t.string   "institution"
-    t.string   "degree_type"
     t.string   "status"
     t.integer  "user_id"
     t.datetime "created_at",  :null => false
