@@ -23,7 +23,7 @@ describe Orientation do
     describe "accessible attributes" do
 		it "should not allow access to user id" do
 			expect do
-				Degree.new(user_id: user.id)
+				Orientation.new(user_id: user.id)
 			end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
 		end
 	end

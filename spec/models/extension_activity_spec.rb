@@ -1,25 +1,28 @@
 require 'spec_helper'
 
-describe Award do
+describe ExtensionActivity do
+  
     before do
-        @award = Award.new
+        @extension_activity = ExtensionActivity.new
     end
     
     let(:user) { FactoryGirl.create(:user) } 
-    subject { @award }
 
-    it { should respond_to(:type) }
-    it { should respond_to(:status) }
-    it { should respond_to(:date) }
-    it { should respond_to(:institution) }
+    subject { @extension_activity }
+
     it { should respond_to(:text) }
+    it { should respond_to(:type) }
+    it { should respond_to(:date) }
+    it { should respond_to(:end_date) }
+    it { should respond_to(:subtype) }
+    it { should respond_to(:title) }
     it { should respond_to(:user_id) }
 
     describe "accessible attributes" do
 		it "should not allow access to user id" do
 			expect do
-				Award.new(user_id: user.id)
+				ExtensionActivity.new(user_id: user.id)
 			end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
 		end
-	end
+	end  
 end

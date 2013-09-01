@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130831212622) do
+ActiveRecord::Schema.define(:version => 20130901013230) do
 
   create_table "inputs", :force => true do |t|
     t.text     "text"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(:version => 20130831212622) do
     t.string   "subtype"
     t.string   "title"
     t.string   "student"
+    t.string   "event_type"
+    t.string   "city"
+    t.string   "country"
   end
 
   create_table "relationships", :force => true do |t|
