@@ -1,5 +1,7 @@
 ProjetoFinal::Application.routes.draw do
     
+    resources :degrees, only: [:new, :create, :destroy]
+
     resources :relationships, only: [:create, :destroy] 
 
     resources :users do
