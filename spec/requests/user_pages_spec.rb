@@ -22,8 +22,9 @@ describe "UserPages" do
 
 				before { click_button submit }
 
-#				it { should have selector('title', text: 'Sign up') }
+                it { should have_title('Criar conta') }
 				it { should have_selector('li', text: 'Name can\'t be blank') }
+                pending "Colocar o texto certo acima"
 			end
         end
 
