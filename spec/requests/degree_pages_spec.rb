@@ -36,6 +36,11 @@ describe "DegreePages" do
             it "should create a degree" do
                 expect { click_button submit }.to change(Degree, :count).by(1)
             end
+
+            describe "should show right success message" do
+                before { click_button submit }
+                it { should have_selector('div.alert-success', text: 'Grau ou título inserido com sucesso!')}
+            end
         end
     end
 end
