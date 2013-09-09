@@ -1,6 +1,7 @@
 ProjetoFinal::Application.routes.draw do
     
     resources :degrees, only: [:new, :create, :destroy]
+    resources :awards, only: [:new, :create, :destroy]
 
     resources :relationships, only: [:create, :destroy] 
 

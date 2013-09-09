@@ -20,6 +20,8 @@ describe Degree do
     it { should respond_to(:status) }
     it { should respond_to(:user_id) }
 
+    it { should be_valid }
+    
     describe "accessible attributes" do
 		it "should not allow access to user id" do
 			expect do
@@ -48,7 +50,5 @@ describe Degree do
             end
         end
         
-    end
-
-    it { should be_valid }
+    end 
 end

@@ -1,0 +1,20 @@
+<% provide(:title, 'Novo prêmio') %>
+
+<%= form_for(@award) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :status, "Status" %>
+    <%= f.select :status, options_for_select(@options_for_select_status) %>
+    
+    <%= f.label :text, "Nome" %>
+    <%= f.text_field :text %>
+
+    <%= f.label :date, "Data" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :institution, "Instituição" %>
+    <%= f.text_field :institution %>
+
+    <%= f.submit "Criar" %>
+<% end %>
