@@ -3,6 +3,7 @@ ProjetoFinal::Application.routes.draw do
     resources :degrees, only: [:new, :create, :destroy]
     resources :awards, only: [:new, :create, :destroy]
     resources :orientations, only: [:new, :create, :destroy]
+    resources :extension_activities, only: [:new, :create, :destroy]
 
     resources :relationships, only: [:create, :destroy] 
 

@@ -1,0 +1,23 @@
+<% provide(:title, 'Nova atividade de extensão') %>
+
+<%= form_for(@extension_activity) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :subtype, "Tipo" %>
+    <%= f.text_field :subtype %>
+    
+    <%= f.label :title, "Nome" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :date, "Data de início" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :end_date, "Data de fim" %>
+    <%= f.text_field :end_date %>
+    
+    <%= f.label :text, "Descrição" %>
+    <%= f.text_field :text %>
+
+    <%= f.submit "Criar" %>
+<% end %>

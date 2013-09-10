@@ -38,7 +38,7 @@ describe "AwardPages" do
 
             describe "should show right success message" do
                 before { click_button submit }
-                it { should have_selector('div.alert-success', text: 'Prêmio inserido com sucesso!')}
+                it { should have_selector('div.alert-success', text: 'Prêmio inserido com sucesso!') }
             end
         end
     end

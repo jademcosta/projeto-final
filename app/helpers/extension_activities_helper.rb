@@ -1,0 +1,2 @@
+module ExtensionActivitiesHelper
+end
