@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe "DegreePages" do
 
-    subject { page}
+    subject { page }
 
     describe "insert" do
         before { visit new_degree_path }

@@ -1,0 +1,35 @@
+<% provide(:title, 'Nova orientação') %>
+
+<%= form_for(@orientation) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :status, "Status" %>
+    <%= f.select :status, options_for_select(@options_for_select_status) %>
+    
+    <%= f.label :date, "Data de início" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :end_date, "Data de fim" %>
+    <%= f.text_field :end_date %>
+
+    <%= f.label :institution, "Instituição" %>
+    <%= f.text_field :institution %>
+    
+    <%= f.label :subtype, "Tipo" %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+
+    <%= f.label :institution, "Instituição" %>
+    <%= f.text_field :institution %>
+
+    <%= f.label :student, "Estudante" %>
+    <%= f.text_field :student %>
+
+    <%= f.label :title, "Título ou tema" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :text, "Descrição" %>
+    <%= f.text_field :text %>
+
+    <%= f.submit "Criar" %>
+<% end %>
