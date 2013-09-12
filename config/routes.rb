@@ -1,9 +1,13 @@
 ProjetoFinal::Application.routes.draw do
     
+
+  get "administrative_activities/new"
+
     resources :degrees, only: [:new, :create, :destroy]
     resources :awards, only: [:new, :create, :destroy]
     resources :orientations, only: [:new, :create, :destroy]
     resources :extension_activities, only: [:new, :create, :destroy]
+    resources :administrative_activities, only: [:new, :create, :destroy]
 
     resources :relationships, only: [:create, :destroy] 
 

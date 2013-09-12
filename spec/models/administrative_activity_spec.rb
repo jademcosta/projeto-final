@@ -1,9 +1,11 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 describe AdministrativeActivity do
     
     before do
-        @administrative_activity = AdministrativeActivity.new
+        @administrative_activity = AdministrativeActivity.new(title: "Coordenador do instituto de matemática", institution: "UFRJ - IM")
     end
     
     let(:user) { FactoryGirl.create(:user) } 
@@ -16,6 +18,8 @@ describe AdministrativeActivity do
     it { should respond_to(:institution) }
     it { should respond_to(:user_id) }
 
+    it { should be_valid }
+
     describe "accessible attributes" do
 		it "should not allow access to user id" do
 			expect do
@@ -23,4 +27,14 @@ describe AdministrativeActivity do
 			end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
 		end
 	end
+
+    describe "when title is not present" do
+        before { @administrative_activity.title = ' ' }
+        it { should_not be_valid }
+    end
+
+    describe "when institution is not present" do
+        before { @administrative_activity.institution = ' ' }
+        it { should_not be_valid }
+    end
 end

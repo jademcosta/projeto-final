@@ -9,7 +9,7 @@ describe "UserPages" do
     describe "signup" do    
         before { visit signup_path }
         
-        it { should have_title(full_title('Cadastro')) } 
+        it { should have_title(full_title('Criar conta')) } 
 
         let(:submit) { "Criar conta" }
 
@@ -22,7 +22,7 @@ describe "UserPages" do
 
 				before { click_button submit }
 
-                it { should have_title('Criar conta') }
+                it { should have_title(full_title('Criar conta')) }
 				it { should have_selector('li', text: 'Name can\'t be blank') }
                 pending "Colocar o texto certo acima"
 			end

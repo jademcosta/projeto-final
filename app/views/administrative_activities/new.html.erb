@@ -1,0 +1,21 @@
+<% provide(:title, 'Nova atividade administrativa') %>
+
+<%= form_for(@administrative_activity) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :institution, "Instituição" %>
+    <%= f.text_field :institution %>
+    
+    <%= f.label :title, "Tipo de atividade/cargo/função" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :date, "Data de início" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :end_date, "Data de fim" %>
+    <%= f.text_field :end_date %>
+
+
+    <%= f.submit "Criar" %>
+<% end %>
