@@ -1,0 +1,26 @@
+<% provide(:title, 'Nova participação em evento') %>
+
+<%= form_for(@event_participation) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :subtype, "Tipo de participação" %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+    
+    <%= f.label :title, "Nome" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :city, "Cidade" %>
+    <%= f.text_field :city %>
+
+    <%= f.label :country, "País" %>
+    <%= f.text_field :country %>
+
+    <%= f.label :date, "Data" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :event_type, "Tipo de evento" %>
+    <%= f.select :event_type, options_for_select(@options_for_select_event_type) %>
+
+    <%= f.submit "Criar" %>
+<% end %>

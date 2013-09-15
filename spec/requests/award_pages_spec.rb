@@ -13,7 +13,7 @@ describe "AwardPages" do
         let(:submit) { 'Criar' }
 
         describe "with invalid information" do
-            it "should not create a degree" do
+            it "should not create an award" do
                 expect { click_button submit }.not_to change(Award, :count)
             end
 
