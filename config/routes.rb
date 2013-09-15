@@ -7,6 +7,7 @@ ProjetoFinal::Application.routes.draw do
     resources :extension_activities, only: [:new, :create, :destroy]
     resources :administrative_activities, only: [:new, :create, :destroy]
     resources :event_participations, only: [:new, :create, :destroy]
+    resources :researches, only: [:new, :create, :destroy]
 
     resources :relationships, only: [:create, :destroy] 
 

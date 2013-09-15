@@ -1,0 +1,20 @@
+<% provide(:title, 'Nova bolsa de pesquisa, fomento ou auxílio') %>
+
+<%= form_for(@research) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :subtype, "Tipo" %>
+    <%= f.text_field :subtype %>
+    
+    <%= f.label :title, "Título do projeto" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :date, "Data de início" %>
+    <%= f.text_field :date %>
+
+    <%= f.label :end_date, "Data de fim" %>
+    <%= f.text_field :end_date %>
+
+    <%= f.submit "Criar" %>
+<% end %>
