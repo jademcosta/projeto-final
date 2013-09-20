@@ -1,6 +1,5 @@
 ProjetoFinal::Application.routes.draw do
     
-
     resources :degrees, only: [:new, :create, :destroy]
     resources :awards, only: [:new, :create, :destroy]
     resources :orientations, only: [:new, :create, :destroy]
@@ -8,6 +7,8 @@ ProjetoFinal::Application.routes.draw do
     resources :administrative_activities, only: [:new, :create, :destroy]
     resources :event_participations, only: [:new, :create, :destroy]
     resources :researches, only: [:new, :create, :destroy]
+    resources :publications, only: [:new, :create, :destroy]
+
 
     resources :relationships, only: [:create, :destroy] 
 

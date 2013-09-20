@@ -1,0 +1,32 @@
+<% provide(:title, 'Nova publicação') %>
+
+<%= form_for(@publication) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :status, "Status" %>
+    <%= f.select :status, options_for_select(@options_for_select_status) %>
+    
+    <%= f.label :title, "Título/tema" %>
+    <%= f.text_field :title %>
+
+    <%= f.label :text, "Descrição (informal)" %>
+    <%= f.text_field :text %>
+
+    <%= f.label :language, "Língua" %>
+    <%= f.text_field :language %>
+
+    <%= f.label :link, "Link para o manuscrito" %>
+    <%= f.text_field :link %>
+
+    <%= f.label :doi, "DOI" %>
+    <%= f.text_field :doi %>
+
+    <%= f.label :bibtex, "Bibtex" %>
+    <%= f.text_field :bibtex %>
+
+    <%= f.label :subtype, "Tipo" %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+
+    <%= f.submit "Criar" %>
+<% end %>
