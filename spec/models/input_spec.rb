@@ -17,6 +17,7 @@ describe Input do
     it { should respond_to(:subtype) }
     it { should respond_to(:status) }
     it { should respond_to(:user_id) }
+    it { should respond_to(:user) }
 
     pending "temos que testar se para cada subtype de Input os attr_accessible estão corretos e protegidos contra mass assignment"
 
