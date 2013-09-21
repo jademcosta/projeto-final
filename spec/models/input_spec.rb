@@ -18,7 +18,8 @@ describe Input do
     it { should respond_to(:status) }
     it { should respond_to(:user_id) }
     it { should respond_to(:user) }
-
+    it { should_not respond_to(:authors) }
+    
     pending "temos que testar se para cada subtype de Input os attr_accessible estão corretos e protegidos contra mass assignment"
 
 end

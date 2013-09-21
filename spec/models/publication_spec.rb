@@ -19,6 +19,7 @@ describe Publication do
     it { should respond_to(:user_id) }
     it { should respond_to(:text) }
     it { should respond_to(:subtype) }
+    it { should respond_to(:authors) }
     
     it { should be_valid }
 
