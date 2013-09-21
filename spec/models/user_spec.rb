@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 require 'spec_helper'
 
 
@@ -26,6 +28,7 @@ describe User do
 	it { should respond_to(:follow!) }
 	it { should respond_to(:reverse_relationships) }
 	it { should respond_to(:followers) }
+	it { should respond_to(:inputs) }
     
     it { should be_valid }
 
@@ -141,4 +144,36 @@ describe User do
 		end
 
 	end
+    
+# ========== Inputs ==========
+
+    describe "inputs associations" do
+        #puts "jade com userclass: #{ @user.class } e nome #{ @user.name }"
+        before { @user.save }
+
+        let!(:older_extension_activity) do
+            FactoryGirl.create(:extension_activity, user: @user, created_at: 1.day.ago)
+        end
+
+        let!(:newer_extension_activity) do
+            FactoryGirl.create(:extension_activity, user: @user, created_at: 1.hour.ago)
+        end
+
+        it "should have the right inputs in the right order" do
+            @user.inputs.should == [newer_extension_activity, older_extension_activity]
+        end
+
+        it "should destroy associated microposts when user is deleted" do
+            inputs = @user.inputs
+            @user.destroy
+            inputs.each do |input|
+                Input.find_by_id(input.id).should be_nil
+            end
+        end
+
+        pending "Fazer o teste de que um post de um usuário que eu não sigo não deve aparecer aqui"
+    end
+
 end
+
+
