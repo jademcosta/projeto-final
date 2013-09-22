@@ -4,6 +4,7 @@ class PublicationsController < ApplicationController
 
     def new
         @publication = Publication.new
+        3.times { @publication.authors.build }
         preencher_options_de_status
         preencher_options_de_tipo
     end

@@ -28,5 +28,9 @@
     <%= f.label :subtype, "Tipo" %>
     <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
 
+    <%= f.fields_for :authors do |builder| %>
+    <%= render 'shared/author_fields', f: builder %>
+    <% end %>
+
     <%= f.submit "Criar" %>
 <% end %>
