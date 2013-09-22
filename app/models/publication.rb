@@ -2,6 +2,8 @@
 
 class Publication < Input
    attr_accessible :link, :language, :doi, :bibtex, :status, :title, :text, :subtype
+    
+   has_many :authors
 
    STATUS_VALUES = ['pesquisa preliminar', 'manuscrito em elaboração', 'manuscrito finalizado', 'submetido (evento/periódico)', 'aceito (evento/periódico)', 'publicado (online)', 'publicado (impresso)']
 
