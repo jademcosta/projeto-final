@@ -1,6 +1,8 @@
 # encoding: utf-8
 class AdministrativeActivitiesController < ApplicationController
     
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @administrative_activity = AdministrativeActivity.new
     end

@@ -2,6 +2,8 @@
 
 class EventParticipationsController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @event_participation = EventParticipation.new
         preencher_options_de_subtype

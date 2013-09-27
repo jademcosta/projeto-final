@@ -5,7 +5,7 @@ class Publication < Input
     
     has_many :authors, inverse_of: :input, foreign_key: "input_id"
 
-    accepts_nested_attributes_for :authors, allow_destroy: true #reject_if: proc { |attributes| attributes['title'].blank? }
+    accepts_nested_attributes_for :authors, allow_destroy: true, reject_if: proc { |attributes| attributes['name'].blank? }
 
     STATUS_VALUES = ['pesquisa preliminar', 'manuscrito em elaboração', 'manuscrito finalizado', 'submetido (evento/periódico)', 'aceito (evento/periódico)', 'publicado (online)', 'publicado (impresso)']
 

@@ -2,6 +2,8 @@
 
 class PublicationsController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @publication = Publication.new
         first_author = @publication.authors.build

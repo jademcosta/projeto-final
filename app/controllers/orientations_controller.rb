@@ -2,6 +2,8 @@
 
 class OrientationsController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @orientation = Orientation.new
         preencher_options_de_status

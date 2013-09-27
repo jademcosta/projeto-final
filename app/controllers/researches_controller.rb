@@ -2,6 +2,8 @@
 
 class ResearchesController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @research = Research.new
     end

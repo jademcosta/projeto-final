@@ -5,6 +5,8 @@ require 'spec_helper'
 describe "PublicationPages" do
 
     subject { page }
+    let(:user) { FactoryGirl.create(:user) }
+	before { sign_in user }
 
     describe "insert" do
         before { visit new_publication_path }

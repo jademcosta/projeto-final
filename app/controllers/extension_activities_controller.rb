@@ -2,6 +2,8 @@
 
 class ExtensionActivitiesController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @extension_activity = ExtensionActivity.new
     end

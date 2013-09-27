@@ -2,6 +2,8 @@
 
 class DegreesController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @degree = Degree.new
         preencher_options_de_status

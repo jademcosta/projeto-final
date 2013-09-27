@@ -2,6 +2,8 @@
 
 class AwardsController < ApplicationController
 
+    before_filter :signed_in_user, only: [:new, :create, :destroy]
+
     def new
         @award = Award.new
         preencher_options_de_status

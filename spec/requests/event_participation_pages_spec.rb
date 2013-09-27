@@ -4,6 +4,8 @@ require 'spec_helper'
 
 describe "EventParticipationPages" do
     subject { page }
+    let(:user) { FactoryGirl.create(:user) }
+	before { sign_in user }
 
     describe "insert" do
         before { visit new_event_participation_path }
