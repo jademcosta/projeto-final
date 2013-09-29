@@ -1,2 +1,17 @@
-<h1>ExaminingBoards#new</h1>
-<p>Find me in app/views/examining_boards/new.html.erb</p>
+<% provide(:title, 'Nova participação em banca examinadora') %>
+
+<%= form_for(@examining_board) do |f| %>
+
+    <%= render 'shared/error_messages', object: f.object %>
+
+    <%= f.label :subtype, "Tipo" %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+    
+    <%= f.label :text, "Candidatos(s) (separados por vírgula, caso seja mais de 1)" %>
+    <%= f.text_field :text %>
+
+    <%= f.label :date, "Data" %>
+    <%= f.text_field :date %>
+
+    <%= f.submit "Criar" %>
+<% end %>

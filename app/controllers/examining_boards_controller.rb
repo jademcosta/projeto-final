@@ -23,6 +23,6 @@ class ExaminingBoardsController < ApplicationController
     private
         
         def preencher_options_de_tipo
-            @options_for_select_status = ExaminingBoard::SUBTYPE_VALUES
+            @options_for_select_subtype = ExaminingBoard::SUBTYPE_VALUES
         end
 end
