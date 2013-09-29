@@ -1,5 +1,7 @@
 ProjetoFinal::Application.routes.draw do
     
+  get "examining_boards/new"
+
     resources :degrees, only: [:new, :create, :destroy]
     resources :awards, only: [:new, :create, :destroy]
     resources :orientations, only: [:new, :create, :destroy]
@@ -8,6 +10,7 @@ ProjetoFinal::Application.routes.draw do
     resources :event_participations, only: [:new, :create, :destroy]
     resources :researches, only: [:new, :create, :destroy]
     resources :publications, only: [:new, :create, :destroy]
+    resources :examining_boards, only: [:new, :create, :destroy]
 
 
     resources :relationships, only: [:create, :destroy] 
