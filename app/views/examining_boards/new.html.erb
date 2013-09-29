@@ -12,6 +12,11 @@
 
     <%= f.label :date, "Data" %>
     <%= f.text_field :date %>
+    
+    <%= f.fields_for :authors do |builder| %>
+    <%= render 'shared/author_fields', f: builder %>
+    <% end %>
+    <%= link_to_add_fields "Adicionar autor", f, :authors %>
 
     <%= f.submit "Criar" %>
 <% end %>

@@ -6,6 +6,9 @@ class ExaminingBoardsController < ApplicationController
 
     def new
         @examining_board = ExaminingBoard.new
+        first_author = @examining_board.authors.build
+        first_author.name = current_user.name
+        2.times { @examining_board.authors.build }
         preencher_options_de_tipo
     end
 
