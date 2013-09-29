@@ -1,5 +1,5 @@
 class User < ActiveRecord::Base
-    attr_accessible :email, :homepage, :institution, :job_title, :name, :title, :password, :password_confirmation
+    attr_accessible :email, :homepage, :institution, :job_title, :name, :title, :password, :password_confirmation, :image
 
     has_secure_password # pra fazer toda a criptografia da senha sozinho
 
@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
 		class_name: "Relationship",	dependent: :destroy
 	has_many :followers, through: :reverse_relationships, source: :follower #nesse caso poderiamos tirar o source:
     has_many :inputs, dependent: :destroy
+
+    mount_uploader :image, ImageUploader
 
     VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 

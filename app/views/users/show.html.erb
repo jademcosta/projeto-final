@@ -6,6 +6,10 @@
     </section>
 
     <section>
+        <%= image_tag @user.image_url(:thumb) if @user.image? %>
+    </section>
+
+    <section>
         <%= render 'user_info' %>
         <% if current_user?(@user) %>
             <div><%= link_to "Editar", edit_user_path(@user) %></div>
