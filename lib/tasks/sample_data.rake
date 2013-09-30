@@ -5,6 +5,7 @@ namespace :db do
 	task populate: :environment do
 		make_users
 		make_relationships
+        make_inputs
 	end
 end
 
@@ -30,4 +31,16 @@ def make_relationships
 	followers = users[3..40]
 	followed_users.each { |followed| user.follow!(followed) }
 	followers.each { |follower| follower.follow!(user) }
+end
+
+def make_inputs
+    prof = User.find_by_email("vigusmao@gmail.com")
+    novo_input = prof.inputs.build
+    novo_input.status = Orientation::STATUS_VALUES[0]
+    novo_input.date = Time.now.midnight - 9.months
+    novo_input.subtype = Orientation::SUBTYPE_VALUES[1]
+    novo_input.student = "Jade Moreira da Costa"
+    novo_input.title = "Ruby on rails para construir uma rede social"
+    novo_input.type = "Orientation"
+    novo_input.save!
 end

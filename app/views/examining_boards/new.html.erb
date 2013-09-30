@@ -16,7 +16,7 @@
     <%= f.fields_for :authors do |builder| %>
     <%= render 'shared/author_fields', f: builder %>
     <% end %>
-    <%= link_to_add_fields "Adicionar autor", f, :authors %>
+    <%= link_to_add_fields "Adicionar componente da banca", f, :authors %>
 
     <%= f.submit "Criar" %>
 <% end %>
