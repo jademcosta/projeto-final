@@ -4,4 +4,6 @@ class Author < ActiveRecord::Base
     attr_accessible :name #, :input_id
 
     belongs_to :input
+
+    validates :name, presence: true
 end

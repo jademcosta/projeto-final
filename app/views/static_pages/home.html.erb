@@ -17,7 +17,7 @@
     <section>
         <%= render 'shared/stats' %>
     </section>
-
+    
     <div>
         <%= link_to "Inserir grau ou título", new_degree_path %><br/>
         <%= link_to "Inserir publicação", new_publication_path %><br/>
@@ -32,7 +32,10 @@
 
 </aside>
 
-
+    <section>
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+    </section>
 <% else %>
     <!--	<div class="center hero-unit">
 		<h1>Welcome to the Sample App</h1>

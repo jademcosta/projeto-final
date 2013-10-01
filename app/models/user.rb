@@ -40,6 +40,11 @@ class User < ActiveRecord::Base
         paginate :page => page, :conditions => ['name like ?', "%#{search}%"], :order => 'name'
     end
 
+    def feed
+        ids_of_followed_users = followed_user_ids
+        Input.where(:user_id => ids_of_followed_users)
+    end
+
     private
 
         def generate_token(column)

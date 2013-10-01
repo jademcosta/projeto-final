@@ -14,8 +14,8 @@ def make_users
 		password: "1234", password_confirmation: "1234")
 	prof = User.create!(name: "Vinícius Gusmão", email: "vigusmao@gmail.com",
 		password: "1234", password_confirmation: "1234")
-
-	99.times do |n|
+	
+    99.times do |n|
 		name = Faker::Name.name
 		email = "exemplo-#{n+1}@gmail.com"
 		password = "senha"
@@ -27,7 +27,7 @@ end
 def make_relationships
 	users = User.all
 	user = users.first
-	followed_users = users[2..50]
+	followed_users = users[1..50]
 	followers = users[3..40]
 	followed_users.each { |followed| user.follow!(followed) }
 	followers.each { |follower| follower.follow!(user) }
@@ -43,4 +43,13 @@ def make_inputs
     novo_input.title = "Ruby on rails para construir uma rede social"
     novo_input.type = "Orientation"
     novo_input.save!
+
+    outro_input = prof.inputs.build
+    outro_input.status = Degree::STATUS_VALUES[2]
+    outro_input.subtype = "Doutorado"
+    outro_input.institution = "UFRJ"
+    outro_input.type = "Degree"
+    outro_input.save!
+    outro_input.created_at = 3.day.ago
+    outro_input.save!
 end
