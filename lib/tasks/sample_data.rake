@@ -52,4 +52,16 @@ def make_inputs
     outro_input.save!
     outro_input.created_at = 3.day.ago
     outro_input.save!
+
+    eu = User.find_by_email("jademcosta@gmail.com")
+    meu_input = eu.inputs.build
+    meu_input.subtype = EventParticipation::SUBTYPE_VALUES[4]
+    meu_input.event_type = EventParticipation::EVENT_TYPE_VALUES[3]
+    meu_input.title = "Agile in Rio"
+    meu_input.type = "EventParticipation"
+    meu_input.save!
+    meu_input.created_at = 1.day.ago
+    meu_input.save!
+
+
 end
