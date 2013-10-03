@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 class User < ActiveRecord::Base
     attr_accessible :email, :homepage, :institution, :job_title, :name, :title, :password, :password_confirmation, :image
 
@@ -42,6 +44,7 @@ class User < ActiveRecord::Base
 
     def feed
         ids_of_followed_users = followed_user_ids
+        ids_of_followed_users << id #os seus próprios inputs tb aparecem no seu feed
         Input.where(:user_id => ids_of_followed_users)
     end
 
