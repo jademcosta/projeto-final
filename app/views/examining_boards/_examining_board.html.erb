@@ -1,0 +1,17 @@
+Participação em banca examinadora
+<div>
+
+    <div>Tipo: <%= examining_board.subtype %></div>
+    <div>Candidatos: <%= examining_board.text %></div>
+    <div>Data: <%= examining_board.date %></div>
+    <% if examining_board.authors && examining_board.authors.count > 0 %>
+        <div>
+            <p>Composição da banca</p>
+            <div>
+                <% examining_board.authors.each do |person| %>
+                    <span><%= person.name %></span>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+</div>

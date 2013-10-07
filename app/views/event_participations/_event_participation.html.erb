@@ -1,2 +1,10 @@
-<%= event_participation.created_at %>
+Evento
+<div>
+    <div><%= event_participation.event_type %>:</div>
+    <div><%= event_participation.title %></div>
+    <div>Tipo de participação: <%= event_participation.subtype %></div>
 
+    <% if event_participation.city %><div>Cidade: <%= event_participation.city %></div><% end %>
+    <% if event_participation.country %><div>País: <%= event_participation.country %></div><% end %>
+    <% if event_participation.date %><div>Em: <%= event_participation.date %></div><% end %>
+</div>

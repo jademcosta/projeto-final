@@ -1,0 +1,10 @@
+Atividade de extensão
+<div>
+    
+    <div><%= extension_activity.title %></div>
+    <% if extension_activity.subtype %><div>Tipo: <%= extension_activity.subtype %></div><% end %>
+    <% if extension_activity.text %><div>Descrição: <%= extension_activity.text %></div><% end %>
+
+    <% if extension_activity.date %><div>Início: <%= extension_activity.date %></div><% end %>
+    <% if extension_activity.end_date %><div>Fim: <%= extension_activity.end_date %></div><% end %>
+</div>

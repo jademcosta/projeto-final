@@ -1,2 +1,12 @@
-<%= orientation.created_at %>
+Orientação
+<div>
 
+    <div><%= orientation.subtype %></div>
+    <div>Status: <%= orientation.status %></div>
+    <div>Aluno: <%= orientation.student %></div>
+    <% if orientation.title %><div>Título: <%= orientation.title %></div><% end %>
+    <% if orientation.text %><div>Descrição: <%= orientation.text %></div><% end %>
+    <% if orientation.date %><div>Início: <%= orientation.date %></div><% end %>
+    <% if orientation.end_date %><div>Fim: <%= orientation.end_date %></div><% end %>
+    <% if orientation.institution %><div>Instituição: <%= orientation.institution %></div><% end %>
+</div>

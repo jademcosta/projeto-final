@@ -1,0 +1,22 @@
+Publicação
+<div>
+    <div>Status: <%= publication.status %></div>
+    <div>Tipo: <%= publication.subtype %></div>
+    <div>Título: <%= publication.title %></div>
+    
+    <% if publication.authors && publication.authors.count > 0 %>
+        <div>
+            <div>Autores</div>
+            <div>
+                <% publication.authors.each do |author| %>
+                    <div><%= author %></div>
+                <% end %>
+            </div>
+        </div>
+    <% end %>
+    <% if publication.text %><div>Descrição: <%= publication.text %></div><% end %>
+    <% if publication.language %><div>Língua: <%= publication.language %></div><% end %>
+    <% if publication.link %><div>Link para o manuscrito: <a href="<%= publication.link %>">clique aqui</a></div><% end %>
+    <% if publication.doi %><div>DOI: <%= publication.doi %></div><% end %>
+    <% if publication.bibtex %><div>Bibtex: <%= publication.bibtex %></div><% end %>
+</div>
