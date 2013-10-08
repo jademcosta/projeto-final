@@ -22,7 +22,7 @@ describe "AdministrativeActivityPages" do
             describe "After submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova atividade administrativa')) }
-                it { should have_selector('li', 'Title can\'t be blank') }
+                it { should have_selector('li', 'Nome não pode ficar em branco') }
             end
         end
 

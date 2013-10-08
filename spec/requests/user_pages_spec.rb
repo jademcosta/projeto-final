@@ -23,7 +23,7 @@ describe "UserPages" do
 				before { click_button submit }
 
                 it { should have_title(full_title('Criar conta')) }
-				it { should have_selector('li', text: 'Name can\'t be blank') }
+				it { should have_selector('li', text: 'Nome não pode ficar em branco') }
                 pending "Colocar o texto certo acima"
 			end
         end
@@ -141,7 +141,7 @@ describe "UserPages" do
                 fill_in "Nome", with: ""
                 click_button "Salvar alterações"
             end
-			it { should have_content('error') }
+			it { should have_content('erro') }
 		end
 
 		describe "with valid information" do

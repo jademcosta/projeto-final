@@ -22,7 +22,7 @@ describe "OrientationPages" do
             describe "after submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova orientação')) }
-                it { should have_selector('li', text: 'Student can\'t be blank') }
+                it { should have_selector('li', text: 'Estudante não pode ficar em branco') }
             end
         end
 

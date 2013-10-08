@@ -24,7 +24,7 @@ describe "DegreePages" do
                 before { click_button submit }
                 
                 it { should have_title(full_title('Novo grau ou título')) }
-                it { should have_selector('li', text: 'Subtype can\'t be blank') }
+                it { should have_selector('li', text: 'Tipo não pode ficar em branco') }
                 pending "Internacionalizar frase de erro no form degree"
             end
         end

@@ -22,7 +22,7 @@ describe "ExaminingBoardPages" do
             describe "after submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova participação em banca examinadora')) }
-                it { should have_selector('li', text: 'Text can\'t be blank') }
+                it { should have_selector('li', text: 'Data não pode ficar em branco') }
             end
         end
 

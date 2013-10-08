@@ -22,7 +22,7 @@ describe "ExtensionActivityPages" do
             describe "after submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova atividade de extensão')) }
-                it { should have_selector('li', text: 'Title can\'t be blank')}
+                it { should have_selector('li', text: 'Nome não pode ficar em branco')}
             end
         end
 

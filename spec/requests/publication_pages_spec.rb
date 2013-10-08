@@ -22,7 +22,7 @@ describe "PublicationPages" do
             describe "After submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova publicação')) }
-                it { should have_selector('li', text: 'Title can\'t be blank') }
+                it { should have_selector('li', text: 'Título/tema não pode ficar em branco') }
             end
         end
 

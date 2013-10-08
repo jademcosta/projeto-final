@@ -22,7 +22,7 @@ describe "ResearchPages" do
             describe "after submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Nova bolsa de pesquisa, fomento ou auxílio')) }
-                it { should have_selector('li', text: 'Subtype can\'t be blank') }
+                it { should have_selector('li', text: 'Tipo não pode ficar em branco') }
             end
         end
 

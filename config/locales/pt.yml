@@ -220,6 +220,7 @@ pt:
       research: Pesquisa
       publication: Publicação
       degree: Grau ou título
+      user: Usuário
     attributes:
       event_participation:
         title: "Nome"
@@ -241,5 +242,7 @@ pt:
         title: "Título/tema"
       degree:
         subtype: "Tipo"
+      user:
+        name: "Nome"
     errors:
       <<: *errors

@@ -22,9 +22,7 @@ describe "AwardPages" do
             describe "After submission" do
                 before { click_button submit }
                 it { should have_title(full_title('Novo prêmio')) }
-                it { should have_selector('li', text: 'Text can\'t be blank') }
-                pending "Internacionalizar frase de erro no form award"
-
+                it { should have_selector('li', text: 'Nome não pode ficar em branco') }
             end
         end
 
