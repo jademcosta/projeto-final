@@ -5,28 +5,28 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :status, "Status" %>
-    <%= f.select :status, options_for_select(@options_for_select_status) %>
+    <%= f.select :status, options_for_select(@options_for_select_status) %><br />
     
     <%= f.label :title, "Título/tema" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br />
 
     <%= f.label :text, "Descrição (informal)" %>
-    <%= f.text_field :text %>
+    <%= f.text_field :text %><br />
 
     <%= f.label :language, "Língua" %>
-    <%= f.text_field :language %>
+    <%= f.text_field :language %><br />
 
     <%= f.label :link, "Link para o manuscrito" %>
-    <%= f.text_field :link %>
+    <%= f.text_field :link %><br />
 
     <%= f.label :doi, "DOI" %>
-    <%= f.text_field :doi %>
+    <%= f.text_field :doi %><br />
 
     <%= f.label :bibtex, "Bibtex" %>
-    <%= f.text_field :bibtex %>
+    <%= f.text_field :bibtex %><br />
 
     <%= f.label :subtype, "Tipo" %>
-    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %><br />
 
     <%= f.fields_for :authors do |builder| %>
     <%= render 'shared/author_fields', f: builder %>

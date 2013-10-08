@@ -5,17 +5,16 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :institution, "Instituição" %>
-    <%= f.text_field :institution %>
+    <%= f.text_field :institution %><br />
     
     <%= f.label :title, "Tipo de atividade/cargo/função" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br />
 
     <%= f.label :date, "Data de início" %>
-    <%= f.text_field :date %>
+    <%= f.text_field :date %><br />
 
     <%= f.label :end_date, "Data de fim" %>
-    <%= f.text_field :end_date %>
-
+    <%= f.text_field :end_date %><br />
 
     <%= f.submit "Criar" %>
 <% end %>

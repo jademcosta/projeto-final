@@ -5,13 +5,13 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :subtype, "Tipo" %>
-    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %><br />
     
     <%= f.label :text, "Candidatos(s) (separados por vírgula, caso seja mais de 1)" %>
-    <%= f.text_field :text %>
+    <%= f.text_field :text %><br />
 
     <%= f.label :date, "Data" %>
-    <%= f.text_field :date %>
+    <%= f.text_field :date %><br />
     
     <%= f.fields_for :authors do |builder| %>
     <%= render 'shared/author_fields', f: builder %>

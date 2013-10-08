@@ -5,31 +5,31 @@
     <%= render 'shared/error_messages', object: f.object %>
 
     <%= f.label :status, "Status" %>
-    <%= f.select :status, options_for_select(@options_for_select_status) %>
+    <%= f.select :status, options_for_select(@options_for_select_status) %><br />
     
     <%= f.label :date, "Data de início" %>
-    <%= f.text_field :date %>
+    <%= f.text_field :date %><br />
 
     <%= f.label :end_date, "Data de fim" %>
-    <%= f.text_field :end_date %>
+    <%= f.text_field :end_date %><br />
 
     <%= f.label :institution, "Instituição" %>
-    <%= f.text_field :institution %>
+    <%= f.text_field :institution %><br />
     
     <%= f.label :subtype, "Tipo" %>
-    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %>
+    <%= f.select :subtype, options_for_select(@options_for_select_subtype) %><br />
 
     <%= f.label :institution, "Instituição" %>
-    <%= f.text_field :institution %>
+    <%= f.text_field :institution %><br />
 
     <%= f.label :student, "Estudante" %>
-    <%= f.text_field :student %>
+    <%= f.text_field :student %><br />
 
     <%= f.label :title, "Título ou tema" %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title %><br />
 
     <%= f.label :text, "Descrição" %>
-    <%= f.text_field :text %>
+    <%= f.text_field :text %><br />
 
     <%= f.submit "Criar" %>
 <% end %>
