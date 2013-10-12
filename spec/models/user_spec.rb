@@ -29,6 +29,7 @@ describe User do
 	it { should respond_to(:reverse_relationships) }
 	it { should respond_to(:followers) }
 	it { should respond_to(:inputs) }
+	it { should respond_to(:kudos) }
     
     it { should be_valid }
 

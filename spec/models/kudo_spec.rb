@@ -1,12 +1,13 @@
 require 'spec_helper'
 
 describe Kudo do
-    
-    before do
-        @kudo = Kudo.new
-    end
+   
 
     let(:user) { FactoryGirl.create(:user) } 
+    before do
+        @kudo = user.kudos.build
+    end
+
     subject { @kudo }
 
     it { should respond_to(:user) }

@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
 		class_name: "Relationship",	dependent: :destroy
 	has_many :followers, through: :reverse_relationships, source: :follower #nesse caso poderiamos tirar o source:
     has_many :inputs, dependent: :destroy
+    has_many :kudos, dependent: :destroy
 
     mount_uploader :image, ImageUploader
 
