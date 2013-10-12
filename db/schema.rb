@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130929233247) do
+ActiveRecord::Schema.define(:version => 20131012222900) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -41,6 +41,16 @@ ActiveRecord::Schema.define(:version => 20130929233247) do
     t.string   "doi"
     t.text     "bibtex"
   end
+
+  create_table "kudos", :force => true do |t|
+    t.integer  "input_id"
+    t.integer  "user_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "kudos", ["input_id"], :name => "index_kudos_on_input_id"
+  add_index "kudos", ["user_id"], :name => "index_kudos_on_user_id"
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"

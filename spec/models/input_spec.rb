@@ -22,4 +22,5 @@ describe Input do
     
     pending "temos que testar se para cada subtype de Input os attr_accessible estão corretos e protegidos contra mass assignment"
 
+    pending "Temos que testar que ao colocar user_id como nil o model se torna inválido"
 end
