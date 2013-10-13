@@ -1,3 +1,5 @@
+# encoding: utf-8
+
 module ApplicationHelper
     
     def full_title(page_title)
@@ -18,5 +20,16 @@ module ApplicationHelper
         render('shared/' + association.to_s.singularize + "_fields", f: builder)
         end
         link_to(name, '#', class: "add_fields", data: {id: id, fields: fields.gsub("\n", "")})
+    end
+
+    def decide_kudo_string_for_input(input)
+        if current_user.gave_kudo_to input
+            total = input.kudos.count - 1
+            return "Você deu os parabéns, e outras " + total.to_s + " pessoas também" if total > 0
+            return "Você deu os parabéns"
+        else
+            return "#{input.kudos.count} pessoas deram parabéns" if input.kudos.count > 0
+            return ""
+        end
     end
 end

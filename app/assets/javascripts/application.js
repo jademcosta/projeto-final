@@ -15,6 +15,13 @@
 //= require_tree .
 $(document).ready(function(){
     
+    $('.bt_give_kudo').hide();
+
+    $('.give_kudo_link').click(function(event) {
+        $(this).parent('form').submit();
+        event.preventDefault();
+    });
+
     $('.add_fields').click(function(){
         time = new Date().getTime()
         regexp = new RegExp($(this).data('id'), 'g')
@@ -22,3 +29,4 @@ $(document).ready(function(){
         event.preventDefault()
     });
 });
+

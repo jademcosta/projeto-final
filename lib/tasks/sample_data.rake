@@ -15,7 +15,7 @@ def make_users
 	prof = User.create!(name: "Vinícius Gusmão", email: "vigusmao@gmail.com",
 		password: "1234", password_confirmation: "1234")
 	
-    99.times do |n|
+    53.times do |n|
 		name = Faker::Name.name
 		email = "exemplo-#{n+1}@gmail.com"
 		password = "senha"

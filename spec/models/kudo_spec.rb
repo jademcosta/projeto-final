@@ -1,11 +1,11 @@
 require 'spec_helper'
 
 describe Kudo do
-   
 
     let(:user) { FactoryGirl.create(:user) } 
+    let(:extension_activity) { FactoryGirl.create(:extension_activity) } 
     before do
-        @kudo = user.kudos.build
+        @kudo = user.kudos.build(input: extension_activity)
     end
 
     subject { @kudo }

@@ -1,5 +1,7 @@
 class Kudo < ActiveRecord::Base
 
+    attr_accessible :input, :input_id
+
     belongs_to :input
     belongs_to :user
 

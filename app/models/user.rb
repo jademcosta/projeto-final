@@ -21,7 +21,6 @@ class User < ActiveRecord::Base
     validates :email, presence: true, format: { with: VALID_EMAIL_REGEX }, uniqueness: { case_sensitive: false }
     validates :password, presence: true, on: :create
     validates :password_confirmation, presence: true, on: :create
-    
 
     before_save { |user| user.email = email.downcase }
     before_save { generate_token(:remember_token) }
@@ -49,6 +48,9 @@ class User < ActiveRecord::Base
         Input.where(:user_id => ids_of_followed_users)
     end
 
+    def gave_kudo_to(input)
+        kudos.where('input_id = ?', input.id).count > 0 ? true : false
+    end
     private
 
         def generate_token(column)

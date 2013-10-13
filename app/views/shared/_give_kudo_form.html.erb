@@ -1,0 +1,13 @@
+<div>
+    <% if !current_user.gave_kudo_to input %>
+        <span>
+            <%= form_for(current_user.kudos.build(input_id: input.id), remote: true) do |f| %>
+                <div><%= f.hidden_field :input_id %></div>
+                <%= f.submit "Dar os parabéns!", class: "bt_give_kudo" %>
+                <%= link_to "Dar os parabéns!", '#', class: 'give_kudo_link', id: "kudo_link_#{input.id}" %>
+            <% end %>
+        </span>
+    <% end %>
+
+    <div id="kudo_string_<%= input.id %>"><%= decide_kudo_string_for_input input %></div>
+</div>

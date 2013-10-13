@@ -1,0 +1,3 @@
+//$('#kudo_link_<%= @kudo.input.id %>').remove();
+$('#kudo_string_<%= @kudo.input.id %>').html('<%= decide_kudo_string_for_input @kudo.input %>');
+$('#kudo_link_<%= @kudo.input.id %>').parent('form').remove();
