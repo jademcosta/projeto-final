@@ -13,13 +13,19 @@
 //= require jquery
 //= require jquery_ujs
 //= require_tree .
-$(document).ready(function(){
-    
-    $('.bt_give_kudo').hide();
-    $('.give_kudo_link').click(function(event) {
+
+jQuery.fn.prepareKudosForm = function() {
+    this.find('.bt_give_kudo').remove();
+    this.find('.give_kudo_link').click(function(event) {
         $(this).parent('form').submit();
         event.preventDefault();
     });
+    return this;
+}
+
+$(document).ready(function(){ 
+
+    $('.new_kudo').prepareKudosForm();
 
     $('.add_fields').click(function(){
         time = new Date().getTime()

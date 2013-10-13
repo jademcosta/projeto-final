@@ -1,2 +1,5 @@
 $('#remove_kudo_<%= @kudo.input.id %>').after('<%= j render "shared/give_kudo_form", input: @kudo.input %>');
 $('#remove_kudo_<%= @kudo.input.id %>').remove();
+$('.new_kudo').prepareKudosForm();
+$('#kudo_string_<%= @kudo.input.id %>').html('<%= decide_kudo_string_for_input @kudo.input %>');
+
