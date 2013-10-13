@@ -16,7 +16,6 @@
 $(document).ready(function(){
     
     $('.bt_give_kudo').hide();
-
     $('.give_kudo_link').click(function(event) {
         $(this).parent('form').submit();
         event.preventDefault();

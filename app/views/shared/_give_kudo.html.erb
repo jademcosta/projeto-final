@@ -1,0 +1,8 @@
+<div>
+    <div id="kudo_string_<%= input.id %>"><%= decide_kudo_string_for_input input %></div>
+    <% if !current_user.gave_kudo_to input %>
+        <%= render 'shared/give_kudo_form', input: input %> 
+    <% else %>
+        <span><%= render 'shared/remove_kudo', input: input %></span>
+    <% end %>
+</div>

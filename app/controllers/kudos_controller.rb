@@ -13,4 +13,12 @@ class KudosController < ApplicationController
 
         end 
     end
+
+    def destroy
+        @kudo = Kudo.destroy(params[:id])
+        respond_to do |format|
+            format.html { redirect_to root_path }
+            format.js
+        end
+    end
 end
