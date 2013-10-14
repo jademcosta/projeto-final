@@ -17,4 +17,10 @@ class ExtensionActivitiesController < ApplicationController
 			render 'new'
 		end
     end
+
+    def destroy
+        ExtensionActivity.destroy(params[:id])
+		flash[:success] = "Atividade de extensão apagada"
+		redirect_back_or root_path
+    end
 end

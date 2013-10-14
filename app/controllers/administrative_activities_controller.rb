@@ -17,4 +17,9 @@ class AdministrativeActivitiesController < ApplicationController
 		end
     end
 
+    def destroy
+        AdministrativeActivity.destroy(params[:id])
+		flash[:success] = "Atividade administrativa apagada"
+		redirect_back_or root_path
+    end
 end

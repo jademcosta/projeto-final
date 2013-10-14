@@ -35,7 +35,7 @@ describe "ResearchPages" do
 
             describe "should show the right message" do
                 before { click_button submit }
-                it { should have_selector('div.alert-success', text: 'Bolsa inserida com sucesso!') }
+                it { should have_selector('div.alert-success', text: 'Pesquisa inserida com sucesso!') }
             end
         end
     end

@@ -25,6 +25,12 @@ class PublicationsController < ApplicationController
 		end
     end
 
+    def destroy
+        Publication.destroy(params[:id])
+		flash[:success] = "Publicação apagada"
+		redirect_back_or root_path
+    end
+
     private
         
         def preencher_options_de_status

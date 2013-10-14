@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     def show
         @user = User.find(params[:id])
+        @feed_items = @user.inputs.paginate(page: params[:page])
     end
 
     def edit

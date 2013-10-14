@@ -23,6 +23,12 @@ class ExaminingBoardsController < ApplicationController
 		end
     end
 
+    def destroy
+        ExaminingBoard.destroy(params[:id])
+		flash[:success] = "Participação em banca examinadora apagada"
+		redirect_back_or root_path
+    end
+
     private
         
         def preencher_options_de_tipo

@@ -20,6 +20,12 @@ class AwardsController < ApplicationController
 		end
     end
 
+    def destroy
+        Award.destroy(params[:id])
+		flash[:success] = "Prêmio ou distinção apagado"
+		redirect_back_or root_path
+    end
+
     private
         
         def preencher_options_de_status

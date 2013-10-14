@@ -20,6 +20,12 @@ class DegreesController < ApplicationController
 		end
     end
 
+    def destroy
+        Degree.destroy(params[:id])
+		flash[:success] = "Grau ou título apagado"
+		redirect_back_or root_path
+    end
+
     private
         
         def preencher_options_de_status

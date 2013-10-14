@@ -7,4 +7,7 @@
 		Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>
     <div><%= render 'shared/give_kudo', input: feed_item %></div>
+    <% if current_user.id == feed_item.user.id %>
+        <div><%= link_to "X", feed_item, method: :delete, data: {confirm: "Você tem certeza que deseja excluir este post?"} %></div>
+    <% end %>
 </li>

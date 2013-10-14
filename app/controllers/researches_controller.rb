@@ -11,10 +11,16 @@ class ResearchesController < ApplicationController
     def create
         @research = current_user.researches.build(params[:research])
 		if @research.save
-			flash[:success] = "Bolsa inserida com sucesso!"
+			flash[:success] = "Pesquisa inserida com sucesso!"
 			redirect_to root_path
 		else
             render 'new'
 		end
+    end
+
+    def destroy
+        Research.destroy(params[:id])
+		flash[:success] = "Pesquisa em evento apagada"
+		redirect_back_or root_path
     end
 end
