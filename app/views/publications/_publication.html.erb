@@ -9,14 +9,14 @@ Publicação
             <div>Autores</div>
             <div>
                 <% publication.authors.each do |author| %>
-                    <div><%= author %></div>
+                    <div><%= author.name %></div>
                 <% end %>
             </div>
         </div>
     <% end %>
-    <% if publication.text %><div>Descrição: <%= publication.text %></div><% end %>
-    <% if publication.language %><div>Língua: <%= publication.language %></div><% end %>
-    <% if publication.link %><div>Link para o manuscrito: <a href="<%= publication.link %>">clique aqui</a></div><% end %>
-    <% if publication.doi %><div>DOI: <%= publication.doi %></div><% end %>
-    <% if publication.bibtex %><div>Bibtex: <%= publication.bibtex %></div><% end %>
+    <% unless publication.text.blank? %><div>Descrição: <%= publication.text %></div><% end %>
+    <% unless publication.language.blank? %><div>Língua: <%= publication.language %></div><% end %>
+    <% unless publication.link.blank? %><div>Link para o manuscrito: <a href="<%= publication.link %>">clique aqui</a></div><% end %>
+    <% unless publication.doi.blank? %><div>DOI: <%= publication.doi %></div><% end %>
+    <% unless publication.bibtex.blank? %><div>Bibtex: <%= publication.bibtex %></div><% end %>
 </div>

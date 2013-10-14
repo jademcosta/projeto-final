@@ -3,7 +3,7 @@
 class EventParticipation < Input
     attr_accessible :title, :city, :country, :date, :event_type, :subtype
 
-    SUBTYPE_VALUES = ['organização (steering committee', 'apresentação oral de trabalho', 'apresentação de poster', 'membro de comitê avaliador', 'participante']
+    SUBTYPE_VALUES = ['organização (steering committee)', 'apresentação oral de trabalho', 'apresentação de poster', 'membro de comitê avaliador', 'participante']
 
     EVENT_TYPE_VALUES = ['congresso', 'simpósio', 'seminário', 'palestra', 'visita técnica']
 

@@ -2,6 +2,6 @@ Atividade administrativa
 <div>
     <div>Função/cargo: <%= administrative_activity.title %></div>
     <div>Instituição/orgão: <%= administrative_activity.institution %></div>
-    <% if administrative_activity.date %><div>Início: <%= administrative_activity.institution %></div><% end %>
-    <% if administrative_activity.end_date %><div>Fim: <%= administrative_activity.end_date %></div><% end %>
+    <% unless administrative_activity.date.blank? %><div>Início: <%= administrative_activity.institution %></div><% end %>
+    <% unless administrative_activity.end_date.blank? %><div>Fim: <%= administrative_activity.end_date %></div><% end %>
 </div>

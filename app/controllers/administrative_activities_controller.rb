@@ -4,11 +4,11 @@ class AdministrativeActivitiesController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @administrative_activity = AdministrativeActivity.new
+        @administrative_activity = current_user.administrative_activities.build
     end
 
     def create
-        @administrative_activity = AdministrativeActivity.new(params[:administrative_activity])
+        @administrative_activity = current_user.administrative_activities.build(params[:administrative_activity])
 		if @administrative_activity.save
 			flash[:success] = "Atividade administrativa inserida com sucesso!"
 			redirect_to root_path

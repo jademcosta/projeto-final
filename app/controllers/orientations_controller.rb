@@ -5,13 +5,13 @@ class OrientationsController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @orientation = Orientation.new
+        @orientation = current_user.orientations.build
         preencher_options_de_status
         preencher_options_de_subtype
     end
 
     def create
-        @orientation = Orientation.new(params[:orientation])
+        @orientation = current_user.orientations.build(params[:orientation])
 		if @orientation.save
 			flash[:success] = "Orientação inserida com sucesso!"
 			redirect_to root_path

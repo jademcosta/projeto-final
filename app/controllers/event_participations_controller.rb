@@ -5,13 +5,13 @@ class EventParticipationsController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @event_participation = EventParticipation.new
+        @event_participation = current_user.event_participations.build
         preencher_options_de_subtype
         preencher_options_de_event_type
     end
 
     def create
-        @event_participation = EventParticipation.new(params[:event_participation])
+        @event_participation = current_user.event_participations.build(params[:event_participation])
 		if @event_participation.save
 			flash[:success] = "Participação em evento inserida com sucesso!"
 			redirect_to root_path

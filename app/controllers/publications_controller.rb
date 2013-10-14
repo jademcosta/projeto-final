@@ -5,7 +5,7 @@ class PublicationsController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @publication = Publication.new
+        @publication = current_user.publications.build
         first_author = @publication.authors.build
         first_author.name = current_user.name
         2.times { @publication.authors.build }
@@ -14,7 +14,7 @@ class PublicationsController < ApplicationController
     end
 
     def create
-        @publication = Publication.new(params[:publication])
+        @publication = current_user.publications.build(params[:publication])
 		if @publication.save
 			flash[:success] = "Publicação inserida com sucesso!"
 			redirect_to root_path

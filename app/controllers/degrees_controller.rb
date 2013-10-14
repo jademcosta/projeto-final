@@ -5,12 +5,12 @@ class DegreesController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @degree = Degree.new
+        @degree = current_user.degrees.build
         preencher_options_de_status
     end
 
     def create
-        @degree = Degree.new(params[:degree])
+        @degree = current_user.degrees.build(params[:degree])
 		if @degree.save
 			flash[:success] = "Grau ou título inserido com sucesso!"
 			redirect_to root_path

@@ -5,12 +5,12 @@ class AwardsController < ApplicationController
     before_filter :signed_in_user, only: [:new, :create, :destroy]
 
     def new
-        @award = Award.new
+        @award = current_user.awards.build
         preencher_options_de_status
     end
 
     def create
-        @award = Award.new(params[:award])
+        @award = current_user.awards.build(params[:award])
 		if @award.save
 			flash[:success] = "Prêmio inserido com sucesso!"
 			redirect_to root_path
