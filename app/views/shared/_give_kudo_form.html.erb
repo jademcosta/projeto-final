@@ -2,6 +2,6 @@
     <%= form_for(current_user.kudos.build(input_id: input.id), remote: true) do |f| %>
         <div><%= f.hidden_field :input_id %></div>
         <%= f.submit "Dar os parabéns!", class: "bt_give_kudo" %>
-        <%= link_to "Dar os parabéns!", '#', class: 'give_kudo_link', id: "kudo_link_#{input.id}" %>
+        <%= link_to "Parabenizar", '#', class: 'give_kudo_link', id: "kudo_link_#{input.id}" %>
     <% end %>
 </span>

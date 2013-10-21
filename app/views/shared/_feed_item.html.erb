@@ -4,7 +4,7 @@
 	</span>
     <span><%= render feed_item %></span>
 	<span class="timestamp">
-		Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
+    <%= post_time_format(feed_item.created_at) %>
     </span>
     <div><%= render 'shared/give_kudo', input: feed_item %></div>
     <% if current_user.id == feed_item.user.id %>

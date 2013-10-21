@@ -5,7 +5,7 @@ describe Kudo do
     let(:user) { FactoryGirl.create(:user) } 
     let(:extension_activity) { FactoryGirl.create(:extension_activity) } 
     before do
-        @kudo = user.kudos.build(input: extension_activity)
+        @kudo = user.kudos.build(input_id: extension_activity.id)
     end
 
     subject { @kudo }

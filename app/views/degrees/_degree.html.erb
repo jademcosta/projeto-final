@@ -2,6 +2,6 @@ Grau ou título
 <div>
     <span><%= degree.subtype %></span><br />
     <span>Status: <%= degree.status %></span><br />
-    <% unless degree.date.blank? %><span>Em <%= degree.date %></span><br /><% end %>
+    <% unless degree.date.blank? %><span>Em <%= post_date degree.date %></span><br /><% end %>
     <% unless degree.institution.blank? %><span>Instituição: <%= degree.institution %></span><br /><% end %>
 </div>

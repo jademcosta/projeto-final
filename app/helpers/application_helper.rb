@@ -34,4 +34,12 @@ module ApplicationHelper
             return ""
         end
     end
+
+    def post_date(date)
+        date.strftime("%d/%m/%Y")
+    end
+
+    def post_time_format(date)
+        date.strftime("Postado em %d/%m/%Y - %H:%M")
+    end
 end

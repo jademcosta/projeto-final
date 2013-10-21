@@ -5,6 +5,6 @@ Atividade de extensão
     <% unless extension_activity.subtype.blank? %><div>Tipo: <%= extension_activity.subtype %></div><% end %>
     <% unless extension_activity.text.blank? %><div>Descrição: <%= extension_activity.text %></div><% end %>
 
-    <% unless extension_activity.date.blank? %><div>Início: <%= extension_activity.date %></div><% end %>
-    <% unless extension_activity.end_date.blank? %><div>Fim: <%= extension_activity.end_date %></div><% end %>
+    <% unless extension_activity.date.blank? %><div>Início: <%= post_date extension_activity.date %></div><% end %>
+    <% unless extension_activity.end_date.blank? %><div>Fim: <%= post_date extension_activity.end_date %></div><% end %>
 </div>

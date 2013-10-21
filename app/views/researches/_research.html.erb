@@ -2,6 +2,6 @@ Pesquisa
 <div>
     <div>Tipo: <%= research.subtype %></div>
     <% unless research.title.blank? %><div>Título: <%= research.title %></div><% end %>
-    <% unless research.date.blank? %><div>Início: <%= research.date %></div><% end %>
-    <% unless research.end_date.blank? %><div>Fim: <%= research.end_date %></div><% end %>
+    <% unless research.date.blank? %><div>Início: <%= post_date research.date %></div><% end %>
+    <% unless research.end_date.blank? %><div>Fim: <%= post_date research.end_date %></div><% end %>
 </div>

@@ -6,5 +6,5 @@ Evento
 
     <% unless event_participation.city.blank? %><div>Cidade: <%= event_participation.city %></div><% end %>
     <% unless event_participation.country.blank? %><div>País: <%= event_participation.country %></div><% end %>
-    <% unless event_participation.date.blank? %><div>Em: <%= event_participation.date %></div><% end %>
+    <% unless event_participation.date.blank? %><div>Em: <%= post_date event_participation.date %></div><% end %>
 </div>

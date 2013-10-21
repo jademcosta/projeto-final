@@ -6,7 +6,7 @@ Orientação
     <div>Aluno: <%= orientation.student %></div>
     <% unless orientation.title.blank? %><div>Título: <%= orientation.title %></div><% end %>
     <% unless orientation.text.blank? %><div>Descrição: <%= orientation.text %></div><% end %>
-    <% unless orientation.date.blank? %><div>Início: <%= orientation.date %></div><% end %>
-    <% unless orientation.end_date.blank? %><div>Fim: <%= orientation.end_date %></div><% end %>
+    <% unless orientation.date.blank? %><div>Início: <%= post_date orientation.date %></div><% end %>
+    <% unless orientation.end_date.blank? %><div>Fim: <%= orientation.post_date end_date %></div><% end %>
     <% unless orientation.institution.blank? %><div>Instituição: <%= orientation.institution %></div><% end %>
 </div>

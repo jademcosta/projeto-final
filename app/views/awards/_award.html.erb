@@ -2,5 +2,5 @@ Prêmio/distinção
 <div>
     <div><%= award.status %>: <%= award.text %></div>
     <% unless award.institution.blank? %><div>Instituição: <%= award.institution %></div><% end %>
-    <% unless award.date.blank? %><div>Em: <%= award.date %></div><% end %>
+    <% unless award.date.blank? %><div>Em: <%= post_date award.date %></div><% end %>
 </div>
