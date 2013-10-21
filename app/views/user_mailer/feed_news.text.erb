@@ -1,0 +1,7 @@
+Olá <%= @user.name %>,
+
+As novidades desta <%= @news_time %> são:
+
+<%= news.each do |new_text| %>
+    <%= new_text %>
+<% end %>

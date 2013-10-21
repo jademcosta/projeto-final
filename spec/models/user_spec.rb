@@ -30,6 +30,7 @@ describe User do
 	it { should respond_to(:followers) }
 	it { should respond_to(:inputs) }
 	it { should respond_to(:kudos) }
+	it { should respond_to(:mount_news) }
     
     it { should be_valid }
 

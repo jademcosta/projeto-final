@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class User < ActiveRecord::Base
-    attr_accessible :email, :homepage, :institution, :job_title, :name, :title, :password, :password_confirmation, :image
+    attr_accessible :email, :homepage, :institution, :job_title, :name, :title, :password, :password_confirmation, :image, :news_periodicity
 
     has_secure_password # pra fazer toda a criptografia da senha sozinho
 
@@ -33,6 +33,7 @@ class User < ActiveRecord::Base
 
     before_save { |user| user.email = email.downcase }
     before_save { generate_token(:remember_token) }
+    before_save { |user| user.news_periodicity = "Semanal" }
 
 
     def following?(other_user)
@@ -60,6 +61,22 @@ class User < ActiveRecord::Base
     def gave_kudo_to(input)
         kudos.where('input_id = ?', input.id).count > 0 ? true : false
     end
+
+    def send_feed_news_mail
+        assunto = news_periodicity
+        UserMailer.feed_news(@user, assunto, mount_news).deliver
+    end
+
+    def mount_news
+        inputs_temp = Input.where(:user_id => followed_user_ids)
+        news_array = []
+        inputs_temp.each do |input|
+            translation_here = I18n.t("activerecord.models.#{input.type.downcase}")
+            news_array << "#{input.user.name} postou um(a) #{translation_here}"
+        end
+        news_array
+    end
+
     private
 
         def generate_token(column)
