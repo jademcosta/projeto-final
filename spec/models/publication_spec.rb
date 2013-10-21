@@ -20,6 +20,7 @@ describe Publication do
     it { should respond_to(:text) }
     it { should respond_to(:subtype) }
     it { should respond_to(:authors) }
+    it { should respond_to(:abstract) }
     
     it { should be_valid }
 

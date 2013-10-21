@@ -1,7 +1,7 @@
 # encoding: utf-8
 
 class Publication < Input
-    attr_accessible :link, :language, :doi, :bibtex, :status, :title, :text, :subtype, :authors_attributes
+    attr_accessible :link, :language, :doi, :bibtex, :status, :title, :text, :subtype, :authors_attributes, :abstract
     
     has_many :authors, inverse_of: :input, foreign_key: "input_id"
 

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20131012222900) do
+ActiveRecord::Schema.define(:version => 20131021175433) do
 
   create_table "authors", :force => true do |t|
     t.string   "name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20131012222900) do
     t.string   "language"
     t.string   "doi"
     t.text     "bibtex"
+    t.text     "abstract"
   end
 
   create_table "kudos", :force => true do |t|
