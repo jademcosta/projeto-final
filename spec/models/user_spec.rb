@@ -122,6 +122,8 @@ describe User do
         end
     end
 
+    pending "Faltou testar o mount_news :/"
+
 # ===== Seguidores e seguidos ===============
     
     describe "following" do
