@@ -24,11 +24,13 @@ module ApplicationHelper
 
     def decide_kudo_string_for_input(input)
         if current_user.gave_kudo_to input
-            total = input.kudos.count - 1
-            return "Você deu os parabéns, e outras " + total.to_s + " pessoas também" if total > 0
-            return "Você deu os parabéns"
+            total = input.kudos.count - 1 #retirei o Kudo do usuário atual
+            return "Você parabenizou, e outra pessoa também" if total == 1
+            return "Você parabenizou, e outras " + total.to_s + " pessoas também" if total > 0
+            return "Você parabenizou"
         else
-            return "#{input.kudos.count} pessoas deram parabéns" if input.kudos.count > 0
+            return "#{input.kudos.count} pessoa parabenizou" if input.kudos.count == 1
+            return "#{input.kudos.count} pessoas parabenizaram" if input.kudos.count > 0
             return ""
         end
     end
