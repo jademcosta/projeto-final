@@ -2,11 +2,12 @@
 	<div id="error_explanation">
 		<div class="alert alert-error">
             <strong><%= object.class.model_name.human %></strong> contém <%= t(:erro, {:count => object.errors.count}) %>
-        </div>
-		<ul>
+        
+		    <ul>
 			<% object.errors.full_messages.each do |msg| %>
 				<li><%= msg %></li>
 			<% end %>
-		</ul>
+            </ul>
+        </div>
 	</div>
 <% end %>

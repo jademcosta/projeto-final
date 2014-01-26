@@ -22,5 +22,5 @@
     <%= f.label :event_type, "Tipo de evento" %>
     <%= f.select :event_type, options_for_select(@options_for_select_event_type) %><br />
 
-    <%= f.submit "Criar" %>
+    <%= f.submit "Criar", class: "btn btn-large btn-primary" %>
 <% end %>

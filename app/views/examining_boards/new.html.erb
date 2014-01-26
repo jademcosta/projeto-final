@@ -17,6 +17,6 @@
     <%= render 'shared/author_fields', f: builder %>
     <% end %>
     <%= link_to_add_fields "Adicionar componente da banca", f, :authors %>
-
-    <%= f.submit "Criar" %>
+    <br />
+    <%= f.submit "Criar", class: "btn btn-large btn-primary" %>
 <% end %>

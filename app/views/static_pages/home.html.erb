@@ -1,41 +1,44 @@
 <% if signed_in? %>
 
+<div class="row">
 
-<aside>
-    <section>
-    <h1>
-        <%= link_to current_user.name, edit_user_path(current_user) %>
-    </h1> 
-    </section>
+    <div class="span3">
+        <div>
+            <h1>
+                <%= link_to current_user.name, edit_user_path(current_user) %>
+            </h1> 
+        </div>
 
-    <section>
-        <%= render 'shared/user_info' %>
-        <% if current_user?(current_user) %>
-        <% end %>
-    </section>
+        <div>
+            <%= render 'shared/user_info' %>
+            <% if current_user?(current_user) %>
+            <% end %>
+        </div>
+        
+        <div class="div-stats-user">
+            <%= render 'shared/stats' %>
+        </div>
 
-    <section>
-        <%= render 'shared/stats' %>
-    </section>
-    
-    <div>
-        <%= link_to "Inserir grau ou título", new_degree_path %><br/>
-        <%= link_to "Inserir publicação", new_publication_path %><br/>
-        <%= link_to "Inserir pesquisa", new_research_path %><br/>
-        <%= link_to "Inserir atividade administrativa", new_administrative_activity_path %><br/>
-        <%= link_to "Inserir prêmio ou distinção", new_award_path %><br/>
-        <%= link_to "Inserir participação em banca examinadora", new_examining_board_path %><br/>
-        <%= link_to "Inserir participação em evento", new_event_participation_path %><br/>
-        <%= link_to "Inserir atividade de extensão", new_extension_activity_path %><br/>
-        <%= link_to "Inserir orientação", new_orientation_path %><br/>
+        <div class="div-novo-input">
+            <%= link_to "Inserir grau ou título", new_degree_path %><br/>
+            <%= link_to "Inserir publicação", new_publication_path %><br/>
+            <%= link_to "Inserir pesquisa", new_research_path %><br/>
+            <%= link_to "Inserir atividade administrativa", new_administrative_activity_path %><br/>
+            <%= link_to "Inserir prêmio ou distinção", new_award_path %><br/>
+            <%= link_to "Inserir participação em banca examinadora", new_examining_board_path %><br/>
+            <%= link_to "Inserir participação em evento", new_event_participation_path %><br/>
+            <%= link_to "Inserir atividade de extensão", new_extension_activity_path %><br/>
+            <%= link_to "Inserir orientação", new_orientation_path %><br/>
+        </div>
     </div>
 
-</aside>
-
-    <section>
-        <h3>Micropost Feed</h3>
-        <%= render 'shared/feed' %>
-    </section>
+    <div class="span9">
+        <div class="div-feed-novidades">
+            <h3>Novidades</h3>
+            <%= render 'shared/feed' %>
+        </div>
+    </div>
+</div>
 <% else %>
     <!--	<div class="center hero-unit">
 		<h1>Welcome to the Sample App</h1>
@@ -44,7 +47,6 @@
 			<a href="http://railstutorial.org/">Ruby on Rails Tutorial</a>
 			sample application.
 		</h2>
-		<%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+		<%= link_to "Cadastre-se agora!", signup_path, class: "btn btn-large btn-primary" %>
 	</div>
-    <%= link_to image_tag("rails.png", alt: "Rails"), 'http://rubyonrails.org/' %>-->
 <% end %>

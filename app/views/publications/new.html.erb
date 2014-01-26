@@ -35,6 +35,8 @@
     <%= render 'shared/author_fields', f: builder %>
     <% end %>
     <%= link_to_add_fields "Adicionar autor", f, :authors %>
+    
+    <br />
 
-    <%= f.submit "Criar" %>
+    <%= f.submit "Criar", class: "btn btn-large btn-primary" %>
 <% end %>

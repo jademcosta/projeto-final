@@ -1,29 +1,33 @@
 <% provide(:title, @user.name) %>
+<div class="row">
+    <div class="span3 coluna-esquerda">
+        <div class="div-nome-usuario">
+            <h1><%= @user.name %></h1> 
+        </div>
 
-<aside>
-    <section>
-        <h1><%= @user.name %></h1> 
-    </section>
+        <div>
+            <%= image_tag @user.image_url(:thumb) if @user.image? %>
+        </div>
 
-    <section>
-        <%= image_tag @user.image_url(:thumb) if @user.image? %>
-    </section>
+        <div>
+            <%= render 'user_info' %>
+            <% if current_user?(@user) %>
+                <div><%= link_to "Editar", edit_user_path(@user) %></div>
+            <% end %>
+        </div>
 
-    <section>
-        <%= render 'user_info' %>
-        <% if current_user?(@user) %>
-            <div><%= link_to "Editar", edit_user_path(@user) %></div>
-        <% end %>
-    </section>
+        <div class="div-stats-user">
+            <%= render 'shared/stats' %>
+        </div>
+        <div class="div-follow-form">
+            <%= render 'follow_form' if signed_in? %>
+        </div>
+    </div>
 
-    <section>
-        <%= render 'shared/stats' %>
-    </section>
-    <section>
-        <%= render 'shared/feed' %>
-    </section>
-</aside>
-
-<div>
-    <%= render 'follow_form' if signed_in? %>
+    <div class="span9">
+        <div class="div-feed-novidades">
+            <h3>Inputs</h3>
+            <%= render 'shared/feed' %>
+        </div>
+    </div>
 </div>
