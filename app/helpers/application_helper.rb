@@ -4,7 +4,7 @@ module ApplicationHelper
     
     def full_title(page_title)
 		
-		base_title = "Rede de pesquisadores"
+		base_title = "DontPerish"
 		
 		if page_title.empty?
 			base_title

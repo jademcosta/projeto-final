@@ -10,7 +10,7 @@ describe ApplicationHelper do
         end
 
         it "should include the base title" do
-            full_title("foo").should =~ /^Rede de pesquisadores/
+            full_title("foo").should =~ /^DontPerish/
         end
 
         it "should not include a bar for the home page" do
