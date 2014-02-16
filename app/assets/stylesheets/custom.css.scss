@@ -69,12 +69,18 @@ p {
 
 .div-novo-input {
     padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eaeaea;
 }
 
 .div-stats-user {
-   padding-bottom: 10px;
+    padding-bottom: 10px;
     border-bottom: 1px solid #eaeaea;
-   padding-top: 10px;
+    padding-top: 10px;
+}
+
+.div-gerador-html {
+    padding-top: 10px;
 }
 
 .div-nome-usuario {

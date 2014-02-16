@@ -30,6 +30,10 @@
             <%= link_to "Inserir atividade de extensão", new_extension_activity_path %><br/>
             <%= link_to "Inserir orientação", new_orientation_path %><br/>
         </div>
+
+        <div class="div-gerador-html">
+            <%= link_to "Gerar HTML de publicações", "localhost:3000/users/#{current_user.id}/htmlpage" %>
+        </div>
     </div>
 
     <div class="span9">

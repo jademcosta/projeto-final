@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
 		if @user.save
 			sign_in @user
-			flash[:success] = "Bem vindo à rede de pesquisadores!"
+			flash[:success] = "Bem vindo ao DontPerish!"
 			redirect_to root_path
 		else
 			render 'new'
@@ -56,6 +56,35 @@ class UsersController < ApplicationController
 		@user = User.find(params[:id])
 		@users = @user.followers.paginate(page: params[:page])
         render 'show_follow'
+    end
+
+    def htmlpage
+        user = current_user
+        pubs = Publication.where(user_id: current_user.id)
+
+        pubs_format = ""
+        pubs_format += "<ul>" if (!pubs.nil? && !pubs.empty?)
+        pubs.each do |p|
+            
+            autores = Author.where(input_id: p.id)
+            autores_str = ""
+            autores.each do |a|
+                autores_str += "#{a.name}, "
+            end
+            autores_str = autores_str[0, autores_str.length - 2]
+
+            pubs_format += "<li>#{autores_str}, <b>#{p.title}</b>"
+            pubs_format += ", DOI: #{p.doi}" if !p.doi.blank?
+            pubs_format += ", Bibtex: #{p.bibtex}" if !p.bibtex.blank?
+
+            pubs_format += "</li>"
+        end
+        pubs_format += "</ul>" if (!pubs.nil? && !pubs.empty?)
+
+        str_final = "<h1>#{user.name}</h1>"
+        str_final += pubs_format if !pubs_format.blank?
+
+        send_data str_final, filename: "page.html"
     end
 
     private
